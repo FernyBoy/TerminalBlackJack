@@ -198,4 +198,14 @@ void CartaQ(int palo, int x, int y);
  */
 void CartaK(int palo, int x, int y);
 
+//-------------------------------------------------------------------------------------------------------------------------
+/** \brief Imprime la parte trasera de una carta.
+ *
+ * \param x Posici\242n horizontal utilizada para dibujar los palos en la carta.
+ * \param y Posici\242n vertical utilizada para dibujar los palos en la carta.
+ *
+ * \return Nada.
+ */
+void CartaTrasera(int x, int y);
+
 #endif

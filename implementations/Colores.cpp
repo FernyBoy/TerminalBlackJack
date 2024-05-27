@@ -1,4 +1,8 @@
+#include <windows.h>
+
 #include "../headers/colores.hpp"
+
+using namespace std;
 
 //-------------------------------------------------------------------------------------------------------------------------
 void EstablecerColor(WORD colorEst)

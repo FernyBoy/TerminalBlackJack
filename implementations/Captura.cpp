@@ -1,6 +1,8 @@
 #include <iostream>
 #include <limits>
 
+#include "../headers/captura.hpp"
+
 using namespace std;
 
 char RespuestaSegura()

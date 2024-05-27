@@ -1,8 +1,8 @@
 #include <iostream>
 
 #include "../headers/cartas.hpp"
-#include "./Cursor.cpp"
-#include "./Colores.cpp"
+#include "../headers/cursor.hpp"
+#include "../headers/colores.hpp"
 
 using namespace std;
 
@@ -93,6 +93,10 @@ void ImprimirCarta(int denominacion, int palo, int x, int y)
 
         case 13:
             CartaK(palo, x, y);
+            break;
+
+        case 14:
+            CartaTrasera(x, y);
             break;
     }
 };
@@ -330,4 +334,11 @@ void CartaK(int palo, int x, int y)
     MoverCursor(x + 12, y + 9); cout << (char)palo;
     MoverCursor(x + 9, y + 10); cout << (char)palo;
     MoverCursor(x + 13, y + 10); cout << (char)palo;
+}
+
+void CartaTrasera(int x, int y)
+{
+    EstablecerColor(ROJO, ROJO);
+    
+    MarcoSimple(17, 13, x + 2, y + 1);
 }
