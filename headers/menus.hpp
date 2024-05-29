@@ -1,14 +1,19 @@
 #ifndef MENUS_INCLUDED
 #define MENUS_INCLUDED
 
-void logoBlackJack();
 
-void menuPrincipal(int eleccion);
+void LogoBlackJack();
+
+void MenuPrincipal(int eleccion);
+
+void MenuSeguirJugando(int seleccion);
+
+void MenuMovimientoJugador(int seleccion);
 
 void tomarCarta(int eleccion);
 
-void instrucciones();
+void Instrucciones();
 
-void creditos();
+void Creditos();
 
 #endif 

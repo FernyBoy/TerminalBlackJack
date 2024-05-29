@@ -17,24 +17,34 @@ Descripción:
 #include <windows.h>
 #include <conio.h>
 
-#include "./implementations/Blackjack.cpp"
-#include "./implementations/Captura.cpp"
-#include "./implementations/Menus.cpp"
+// #include "./implementations/BlackJack.cpp"
+// #include "./implementations/Captura.cpp"
+// #include "./implementations/Cursor.cpp"
+// #include "./implementations/Cartas.cpp"
+// #include "./implementations/Colores.cpp"
+// #include "./implementations/Menus.cpp"
+
+#include "./headers/blackJack.hpp"
+#include "./headers/captura.hpp"
+#include "./headers/cursor.hpp"
+#include "./headers/cartas.hpp"
+#include "./headers/colores.hpp"
+#include "./headers/menus.hpp"
 
 using namespace std;
 
 int main()
 {
-    int eleccion = 0;
+    int seleccion = 0;
     int tecla = 0;
+    float dinero = 100;
 
     do
     {
-        EstablecerTamVentana(110,32);
-        MarcoSimple(108,30,0,0);
-        menuPrincipal(eleccion);
+        MenuPrincipal(seleccion);
 
-        while(true) {
+        while(true) 
+        {
             tecla = _getch(); // Captura la tecla presionada sin necesidad de presionar Enter
 
             if(tecla == 224) 
@@ -44,16 +54,16 @@ int main()
                 switch(tecla) 
                 {
                     case 72: // Flecha hacia arriba
-                        if(eleccion > 0) 
+                        if(seleccion > 0) 
                         {
-                            --eleccion;
+                            --seleccion;
                         }
                         break;
 
                     case 80: // Flecha hacia abajo
-                        if(eleccion < 3)
+                        if(seleccion < 3)
                         {
-                            ++eleccion;
+                            ++seleccion;
                         }
                         break;
                 }
@@ -63,29 +73,31 @@ int main()
                 break;
             }
             
-            menuPrincipal(eleccion);
+            MenuPrincipal(seleccion);
         }
 
-        switch(eleccion) 
+        switch(seleccion) 
         {
             case 0:
                 system("cls");
-                jugarBlackJack();
+                dinero = JugarBlackJack(dinero);
                 break;
             case 1:
-                instrucciones();
+                system("cls");
+                Instrucciones();
                 break;
             case 2:
-                creditos();
+                system("cls");
+                Creditos();
                 break;
             case 3:
-                cout << "\tSaliendo del juego" << endl;
+                cout << "\tSaliendo del juego..." << endl;
+                Sleep(1000);
                 break;
         }
 
-        Sleep(2000);
 
-    } while(eleccion != 3);
+    } while(seleccion != 3);
 
     return 0;
 }

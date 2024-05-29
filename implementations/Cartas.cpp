@@ -1,8 +1,8 @@
 #include <iostream>
 
 #include "../headers/cartas.hpp"
-#include "../headers/cursor.hpp"
 #include "../headers/colores.hpp"
+#include "../headers/cursor.hpp"
 
 using namespace std;
 
@@ -99,6 +99,8 @@ void ImprimirCarta(int denominacion, int palo, int x, int y)
             CartaTrasera(x, y);
             break;
     }
+
+    EstablecerColor(NEGRO, BLANCO);
 };
 
 void CartaA(int palo, int x, int y)
